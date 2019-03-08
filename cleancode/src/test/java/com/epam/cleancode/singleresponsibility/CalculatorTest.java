@@ -21,17 +21,17 @@ public class CalculatorTest {
 
     @Test(expected = WrongFormatException.class)
     public void shouldThrowWrongFormatExceptionWhenInputForAddIsNull() {
-        calc.add(null);
+        calc.addition(null);
     }
 
     @Test(expected = WrongFormatException.class)
     public void shouldThrowWrongFormatExceptionWhenInputForAddIsNotDigits() {
-        calc.add("abc");
+        calc.addition("abc");
     }
 
     @Test(expected = WrongFormatException.class)
     public void shouldThrowWrongFormatExceptionWhenInputForAddWithWrongSeparator() {
-        calc.add("1|2|3");
+        calc.addition("1|2|3");
     }
 
     @Test
@@ -46,24 +46,24 @@ public class CalculatorTest {
 
     @Test(expected = WrongFormatException.class)
     public void shouldThrowWrongFormatExceptionWhenInputForMultiplyIsNull() {
-        calc.multiply(null);
+        calc.multiplication(null);
     }
 
     @Test(expected = WrongFormatException.class)
     public void shouldThrowWrongFormatExceptionWhenInputForMultiplyIsNotDigits() {
-        calc.multiply("xyz");
+        calc.multiplication("xyz");
     }
 
     @Test(expected = WrongFormatException.class)
     public void shouldThrowWrongFormatExceptionWhenInputForMultiplyWithWrongSeparator() {
-        calc.multiply("2-5-3");
+        calc.multiplication("2-5-3");
     }
 
     private void add(String numbers, String expected) {
-        assertEquals(expected, calc.add(numbers));
+        assertEquals(expected, calc.addition(numbers));
     }
 
     private void multiply(String numbers, String expected) {
-        assertEquals(expected, calc.multiply(numbers));
+        assertEquals(expected, calc.multiplication(numbers));
     }
 }

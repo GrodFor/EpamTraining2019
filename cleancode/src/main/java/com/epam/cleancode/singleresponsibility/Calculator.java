@@ -1,30 +1,43 @@
 package com.epam.cleancode.singleresponsibility;
 
-public class Calculator{
+class Calculator {
 
     private static final String SEPARATOR = ",";
+    private static final String WRONG_INPUT_EXCEPTION = "Only digits are allowed here.";
 
-    public String add(String numbers) {
+    String addition(String numbers) {
         validate(numbers);
+
         return "sum: " + String.valueOf(getSum(numbers));
     }
 
-    public String multiply(String numbers) {
+    String multiplication(String numbers) {
         validate(numbers);
+
         return "product: " + String.valueOf(getProduct(numbers));
     }
 
     private int getSum(String numbers) {
         int sum = 0;
-        for (String s : numbers.split(SEPARATOR)) if (isNotEmpty(s)) sum += Integer.valueOf(s);
+
+        for (String number : numbers.split(SEPARATOR)) {
+            if (isNotEmpty(number)) {
+                sum += Integer.valueOf(number);
+            }
+        }
+
         return sum;
     }
 
     private int getProduct(String numbers) {
         int sum = 1;
-        for (String s : numbers.split(SEPARATOR))
-            if (isNotEmpty(s))
-                sum *= Integer.valueOf(s);
+
+        for (String number : numbers.split(SEPARATOR)) {
+            if (isNotEmpty(number)) {
+                sum *= Integer.valueOf(number);
+            }
+        }
+
         return sum;
     }
 
@@ -33,8 +46,9 @@ public class Calculator{
     }
 
     private void validate(String numbers) {
-        if (numbers == null || isNotDigits(numbers))
-            throw new WrongFormatException();
+        if (numbers == null || isNotDigits(numbers)) {
+            throw new WrongFormatException(WRONG_INPUT_EXCEPTION);
+        }
     }
 
     private boolean isNotDigits(String numbers) {
