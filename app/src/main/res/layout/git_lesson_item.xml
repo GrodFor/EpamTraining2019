@@ -10,11 +10,10 @@
     android:focusable="true"
     android:focusableInTouchMode="true"
     android:orientation="horizontal"
-    android:padding="16dp"
-    tools:showIn="@layout/activity_lessons">
+    android:padding="16dp">
 
     <LinearLayout
-        android:id="@+id/mentor"
+        android:id="@+id/mentor_layout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical">
@@ -27,21 +26,23 @@
             app:srcCompat="@drawable/ic_account_circle" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:text="@string/mentor_artiom"
-            android:textColor="@color/real_black" />
+            android:textColor="@color/real_black"
+            android:text="@string/mentor_dzmitry" />
     </LinearLayout>
 
     <TextView
         android:id="@+id/lesson_theme"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/mentor_layout"
+        android:layout_alignParentTop="false"
         android:layout_marginLeft="16dp"
-        android:layout_toRightOf="@+id/mentor"
-        android:text="@string/theme_android_components"
+        android:layout_toRightOf="@+id/mentor_layout"
+        android:text="@string/git"
         android:textSize="18sp"
         android:textStyle="bold" />
 
@@ -49,10 +50,11 @@
         android:id="@+id/lesson_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
+        android:layout_alignBottom="@+id/mentor_layout"
+        android:layout_alignParentBottom="false"
         android:layout_marginLeft="16dp"
-        android:layout_toRightOf="@+id/mentor"
-        android:text="04.03.2019" />
+        android:layout_toRightOf="@+id/mentor_layout"
+        android:text="18.02.2019" />
 
 </RelativeLayout>
     
