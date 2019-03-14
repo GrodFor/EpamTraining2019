@@ -10,50 +10,46 @@
     android:focusable="true"
     android:focusableInTouchMode="true"
     android:orientation="horizontal"
-    android:padding="16dp">
+    android:padding="16dp"
+    tools:showIn="@layout/activity_lessons">
 
-    <LinearLayout
-        android:id="@+id/mentor_layout"
+    <ImageView
+        android:id="@+id/avatar"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center_horizontal"
+        app:srcCompat="@drawable/ic_account_circle" />
+
+    <TextView
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_below="@id/avatar"
+        android:layout_alignRight="@+id/avatar"
+        android:layout_alignParentLeft="true"
+        android:textAlignment="center"
+        android:text="@string/mentor_egor"
 
-        <ImageView
-            android:id="@+id/avatar"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_gravity="center_horizontal"
-            app:srcCompat="@drawable/ic_account_circle" />
-
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:textColor="@color/real_black"
-            android:text="@string/mentor_egor" />
-    </LinearLayout>
+        android:textColor="@color/real_black" />
 
     <TextView
         android:id="@+id/lesson_theme"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/mentor_layout"
-        android:layout_alignParentTop="false"
+        android:layout_alignParentTop="true"
         android:layout_marginLeft="16dp"
-        android:layout_toRightOf="@+id/mentor_layout"
+        android:layout_toRightOf="@+id/textView"
         android:text="@string/clean_code"
         android:textSize="18sp"
         android:textStyle="bold" />
 
     <TextView
         android:id="@+id/lesson_date"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/mentor_layout"
-        android:layout_alignParentBottom="false"
+        android:layout_alignParentBottom="true"
         android:layout_marginLeft="16dp"
-        android:layout_toRightOf="@+id/mentor_layout"
+        android:layout_toRightOf="@+id/textView"
         android:text="28.02.2019" />
 
 </RelativeLayout>
