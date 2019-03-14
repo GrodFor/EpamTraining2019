@@ -4,4 +4,13 @@
 
     <string name="theme_android_components">Android Components</string>
     <string name="theme_android_ui">Android UI</string>
+    <string name="mentor_artiom">Artiom</string>
+    <string name="android_studio">Android studio</string>
+    <string name="mentor_dzmitry">Dzmitry</string>
+    <string name="mentor_egor">Egor</string>
+    <string name="clean_code">Clean code</string>
+    <string name="android_views">Android views</string>
+    <string name="git">Git</string>
+    <string name="mentor_mikhail">Mikhail</string>
+    <string name="java_basics">Java basics</string>
 </resources>

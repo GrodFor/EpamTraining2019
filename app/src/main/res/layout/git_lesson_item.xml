@@ -13,32 +13,31 @@
     android:padding="16dp"
     tools:showIn="@layout/activity_lessons">
 
-
     <ImageView
         android:id="@+id/avatar"
         android:layout_width="40dp"
         android:layout_height="40dp"
+        android:layout_alignRight="@id/textView"
         android:layout_alignParentLeft="true"
-        android:layout_alignRight="@id/textView2"
         app:srcCompat="@drawable/ic_account_circle" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/avatar"
+        android:layout_below="@id/avatar"
+        android:text="@string/mentor_dzmitry"
         android:layout_alignParentLeft="true"
-        android:text="@string/mentor_artiom"
-        android:textAlignment="center"
         android:textColor="@color/real_black" />
 
     <TextView
         android:id="@+id/lesson_theme"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
         android:layout_marginLeft="16dp"
-        android:layout_toRightOf="@+id/textView2"
-        android:text="@string/theme_android_components"
+        android:layout_toRightOf="@+id/textView"
+        android:text="@string/git"
         android:textSize="18sp"
         android:textStyle="bold" />
 
@@ -48,8 +47,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_marginLeft="16dp"
-        android:layout_toRightOf="@+id/textView2"
-        android:text="04.03.2019" />
+        android:layout_toRightOf="@+id/textView"
+        android:text="18.02.2019" />
 
 </RelativeLayout>
     
