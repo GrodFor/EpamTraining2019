@@ -4,6 +4,8 @@ class Calculator {
 
     private static final String SEPARATOR = ",";
     private static final String WRONG_INPUT_EXCEPTION = "Only digits are allowed here.";
+    private static final String SUM = "+";
+    private static final String PRODUCT = "*";
 
     String addition(String numbers) {
         validate(numbers);
@@ -19,22 +21,31 @@ class Calculator {
 
     private int getSum(String numbers) {
         int sum = 0;
-
-        for (String number : numbers.split(SEPARATOR)) {
-            if (isNotEmpty(number)) {
-                sum += Integer.valueOf(number);
-            }
-        }
+        sum = calculateValue(numbers, sum, SUM);
 
         return sum;
     }
 
     private int getProduct(String numbers) {
         int sum = 1;
+        sum = calculateValue(numbers, sum, PRODUCT);
 
+        return sum;
+    }
+
+    private int calculateValue(String numbers, int sum, String operationType) {
         for (String number : numbers.split(SEPARATOR)) {
             if (isNotEmpty(number)) {
-                sum *= Integer.valueOf(number);
+                switch (operationType) {
+                    case SUM:
+                        sum += Integer.valueOf(number);
+                        break;
+                    case PRODUCT:
+                        sum *= Integer.valueOf(number);
+                        break;
+                    default:
+                        sum = -1;
+                }
             }
         }
 
